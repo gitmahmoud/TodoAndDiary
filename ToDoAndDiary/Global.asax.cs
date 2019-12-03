@@ -13,6 +13,10 @@ using Application.Services;
 using Domain.Aggregates;
 using Infrastructure.Data.Repositories;
 using Infrastructure.Data.Interfaces;
+using Infrastructure.Data;
+using AutoMapper;
+using Application.DTO;
+using ToDoAndDiary.Model;
 
 namespace ToDoAndDiary
 {
@@ -26,8 +30,8 @@ namespace ToDoAndDiary
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             var container = IoCContainer.Instance;
-            
-            container.RegisterType<IQueryableUnitOfWork, MainUnitOfWork>(new PerRequestLifetimeManager());
+            container.RegisterType<IUnitOfWork, MainUnitOfWork>(new ContainerControlledLifetimeManager());
+                        container.RegisterType<IQueryableUnitOfWork, MainUnitOfWork>();
 
             container.RegisterType<ITodoService, TodoService>();
             container.RegisterType<IDiaryService, DiaryService>();
@@ -35,7 +39,13 @@ namespace ToDoAndDiary
             container.RegisterType<IDiaryRepository, DiaryRepository>();
             container.RegisterType<ITodoRepository, TodoRepository>();
 
+            Mapper.CreateMap<Diary, DiaryDTO>();
+            Mapper.CreateMap<DiaryDTO, DiaryVm>();
 
+            Mapper.CreateMap<Todo, TodoDTO>();
+            Mapper.CreateMap<TodoDTO, TodoVm>();
+
+            DbDataInitializier.InitializeDatabase();
         }
     }
 }

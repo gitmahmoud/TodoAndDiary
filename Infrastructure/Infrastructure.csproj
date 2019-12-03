@@ -53,6 +53,7 @@
     <Compile Include="Data\Repositories\DiaryRepository.cs" />
     <Compile Include="Data\Repositories\Repository.cs" />
     <Compile Include="Data\Repositories\TodoRepository.cs" />
+    <Compile Include="Data\SeedData.cs" />
     <Compile Include="Data\UnitOfWork\MainUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

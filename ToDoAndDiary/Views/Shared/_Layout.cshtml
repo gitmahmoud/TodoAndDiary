@@ -7,8 +7,10 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <link href="~/Content/MvcGrid/mvc-grid.css" rel="stylesheet">
-    <script src="~/Scripts/MvcGrid/mvc-grid.js"></script>
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>  
 
 </head>
 <body>
@@ -33,12 +35,6 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-
-        <script>
-            +[].forEach.call(document.getElementsByClassName('mvc-grid'), function (element) {
-                +               new MvcGrid(element);
-                +           });
-        </script>
 
         <hr />
         <footer>

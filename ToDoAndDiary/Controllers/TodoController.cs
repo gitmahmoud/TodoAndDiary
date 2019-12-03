@@ -17,16 +17,11 @@ namespace ToDoAndDiary.Controllers
         // GET: Todo
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public PartialViewResult TodoGrid()
-        {
             var todos = serviceProvider._todoService.GetTodos();
             List<TodoVm> lst_todos = Mapper.Map<List<TodoDTO>, List<TodoVm>>(todos);
-            
-            return PartialView("_TodoGrid.cshtml", lst_todos);
 
+            return View(lst_todos);
         }
+        
     }
 }
