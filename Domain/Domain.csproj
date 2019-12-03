@@ -42,10 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aggregates\Diary.cs" />
+    <Compile Include="Aggregates\ITodoRepository.cs" />
+    <Compile Include="Aggregates\IDiaryRepository.cs" />
     <Compile Include="Aggregates\ToDo.cs" />
     <Compile Include="BaseTypes\Entity.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="ISpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

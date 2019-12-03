@@ -1,0 +1,18 @@
+﻿@using ToDoAndDiary.Model
+
+@model List<TodoVm>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Text);
+        columns.Add(model => model.CreationDate);
+        columns.Add(model => model.DueDate);
+    
+    }).MultiFilterable().Filterable().Sortable().Pageable(pager =>
+{
+    pager.PagesToDisplay = 5;
+    pager.RowsPerPage = 100;
+}).Empty("Empty Data").Named("TodoGrid")
+ )

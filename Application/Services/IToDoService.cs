@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    public interface IToDoService
+    public interface ITodoService
     {
 
         /// <summary>
         /// Gets all ToDos 
         /// </summary>
         /// <returns>List of ToDos</returns>
-        List<TodoDTO> GetTodos(int pageIndex, int pageCount, string orderBy, bool ascending);
+        List<TodoDTO> GetTodos();
 
         /// <summary>
         /// Retrieve a todo by its ID

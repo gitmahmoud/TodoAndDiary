@@ -1,4 +1,5 @@
-﻿using Domain.Aggregates;
+﻿using Infrastructure.Data.Interfaces;
+using Domain.Aggregates;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Data
+namespace Infrastructure.Data.UnitOfWork
 {
     public class MainUnitOfWork : DbContext, IQueryableUnitOfWork
     {
@@ -15,7 +16,11 @@ namespace Infrastructure.Data
         /// <summary>
         /// Constructor specifying the name of the Db to be used by the Entity Framework
         /// </summary>
-        public MainUnitOfWork() : base("name=TodoAndDiaryDb") { }
+        public MainUnitOfWork() : base() {
+
+            //Database.SetInitializer<MainUnitOfWork>(new CreateDatabaseIfNotExists<MainUnitOfWork>());
+
+        }
 
         public DbSet<Todo> Todos { get; set; }
         public DbSet<Diary> Diaries { get; set; }

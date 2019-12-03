@@ -6,6 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/MvcGrid/mvc-grid.css" rel="stylesheet">
+    <script src="~/Scripts/MvcGrid/mvc-grid.js"></script>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,8 +24,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Diary", "Index", "Diary")</li>
+                    <li>@Html.ActionLink("Todo", "Index", "Todo")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </div>
@@ -29,6 +33,13 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+
+        <script>
+            +[].forEach.call(document.getElementsByClassName('mvc-grid'), function (element) {
+                +               new MvcGrid(element);
+                +           });
+        </script>
+
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

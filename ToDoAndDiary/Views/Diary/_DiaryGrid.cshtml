@@ -1,0 +1,17 @@
+﻿@using ToDoAndDiary.Model
+
+@model List<DiaryVm>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Text);
+        columns.Add(model => model.CreationDate).Titled("Surname");
+    
+    }).MultiFilterable().Filterable().Sortable().Pageable(pager =>
+{
+    pager.PagesToDisplay = 5;
+    pager.RowsPerPage = 100;
+}).Empty("Empty Data").Named("DiaryGrid")
+ )

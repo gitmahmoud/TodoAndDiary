@@ -49,8 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\IQueryableUnitOfWork.cs" />
-    <Compile Include="Data\MainUnitOfWork.cs" />
+    <Compile Include="Data\Interfaces\IQueryableUnitOfWork.cs" />
+    <Compile Include="Data\Repositories\DiaryRepository.cs" />
+    <Compile Include="Data\Repositories\Repository.cs" />
+    <Compile Include="Data\Repositories\TodoRepository.cs" />
+    <Compile Include="Data\UnitOfWork\MainUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj">
+      <Project>{2fb7d86e-f744-42e3-9f9e-e966ce532319}</Project>
+      <Name>Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{B029CC94-7E5E-4568-83F9-CA4666BD4C91}</Project>
       <Name>Domain</Name>
