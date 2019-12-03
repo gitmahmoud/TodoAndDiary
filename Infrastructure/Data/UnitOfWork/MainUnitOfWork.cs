@@ -16,10 +16,10 @@ namespace Infrastructure.Data.UnitOfWork
         /// <summary>
         /// Constructor specifying the name of the Db to be used by the Entity Framework
         /// </summary>
-        public MainUnitOfWork() : base() {
+        public MainUnitOfWork() : base("name=ToDoAndDiary") {
 
-            //Database.SetInitializer<MainUnitOfWork>(new CreateDatabaseIfNotExists<MainUnitOfWork>());
-
+           // Database.SetInitializer<MainUnitOfWork>(new CreateDatabaseIfNotExists<MainUnitOfWork>());
+            //Database.SetInitializer(new DBInitializer());
         }
 
         public DbSet<Todo> Todos { get; set; }
