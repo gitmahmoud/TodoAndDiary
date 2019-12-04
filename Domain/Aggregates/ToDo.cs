@@ -10,6 +10,10 @@ namespace Domain.Aggregates
 {
     public class Todo : Entity
     {
+        public string Text { get; set; }
+
         public DateTime DueDate { get; set; }
+
+        public ICollection<Attachment> Attachments { get; set; }
     }
 }

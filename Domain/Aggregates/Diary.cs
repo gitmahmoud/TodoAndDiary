@@ -9,6 +9,8 @@ namespace Domain.Aggregates
 {
     public class Diary : Entity
     {
+        public string Text { get; set; }
+        public ICollection<Attachment> Attachments { get; set; }
 
     }
 }

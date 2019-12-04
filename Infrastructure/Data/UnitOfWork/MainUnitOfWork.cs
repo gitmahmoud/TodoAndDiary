@@ -19,8 +19,15 @@ namespace Infrastructure.Data.UnitOfWork
         
         public MainUnitOfWork() : base("name=ToDoAndDiary") {
 
-        
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MainUnitOfWork, Infrastructure.Migrations.Configuration>());
+
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
 
         public DbSet<Todo> Todos { get; set; }
         public DbSet<Diary> Diaries { get; set; }
