@@ -23,6 +23,7 @@ namespace Application.Services
         {
             Todo todo = Mapper.Map<TodoDTO, Todo>(todoDto);
             _todoRepository.Add(todo);
+
             _todoRepository.UnitOfWork.Commit();
         }
 

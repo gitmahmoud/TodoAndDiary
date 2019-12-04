@@ -6,10 +6,11 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm("Create", "Todo", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>TodoVm</h4>
         <hr />
@@ -38,14 +39,32 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+        <div class="form-group" id="uploadDiv">
+            @Html.TextBox("file", "", new { type = "file", @onClick = "return AddUploadControl()" })
+        </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
             </div>
         </div>
-    </div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script>
+
+    var count = 1;
+    function AddUploadControl() {
+        
+        var input = document.createElement("input");
+        input.type = "file";
+        input.name = "file" + count;        
+
+        document.getElementById("uploadDiv").appendChild(input);
+        count++;
+    }
+</script>

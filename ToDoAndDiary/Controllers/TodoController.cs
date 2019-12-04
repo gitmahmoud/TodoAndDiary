@@ -8,6 +8,7 @@ using Application.DTO;
 using ToDoAndDiary.Model;
 
 using AutoMapper;
+using System.IO;
 
 namespace ToDoAndDiary.Controllers
 {
@@ -38,6 +39,15 @@ namespace ToDoAndDiary.Controllers
                 TodoDTO todoDto = Mapper.Map<TodoVm, TodoDTO>(todo);
 
                 serviceProvider._todoService.AddTodo(todoDto);
+
+                foreach (string upload in Request.Files)
+                {
+                    if (Request.Files[upload] == null) continue;
+                    string path = AppDomain.CurrentDomain.BaseDirectory + "uploads/";
+                    string filename = Guid.NewGuid().ToString() +".jpg";
+                    Request.Files[upload].SaveAs(Path.Combine(path, filename));
+                }
+
                 return RedirectToAction("Index");
             }
 

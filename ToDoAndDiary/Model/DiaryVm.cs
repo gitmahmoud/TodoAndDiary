@@ -17,5 +17,8 @@ namespace ToDoAndDiary.Model
         
         [Display(Name = "Created At")]
         public DateTime CreationDate { get; set; }
+
+        public List<AttachmentVm> Attachments { get; set; }
+
     }
 }
