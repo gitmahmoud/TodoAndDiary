@@ -42,10 +42,16 @@ namespace ToDoAndDiary
             Mapper.CreateMap<Diary, DiaryDTO>();
             Mapper.CreateMap<DiaryDTO, DiaryVm>();
 
+            Mapper.CreateMap<DiaryVm, DiaryDTO>();
+            Mapper.CreateMap<DiaryDTO, Diary>();
+
             Mapper.CreateMap<Todo, TodoDTO>();
             Mapper.CreateMap<TodoDTO, TodoVm>();
 
-            DbDataInitializier.InitializeDatabase();
+            Mapper.CreateMap<TodoVm, TodoDTO>();
+            Mapper.CreateMap<TodoDTO, Todo>();
+
+            //DbDataInitializier.InitializeDatabase();
         }
     }
 }

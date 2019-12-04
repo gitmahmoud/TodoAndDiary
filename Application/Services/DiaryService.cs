@@ -22,7 +22,9 @@ namespace Application.Services
 
         public void AddDiary(DiaryDTO diaryDto)
         {
-            throw new NotImplementedException();
+            Diary diary = Mapper.Map<DiaryDTO, Diary>(diaryDto);
+            _diaryRepository.Add(diary);
+            _diaryRepository.UnitOfWork.Commit();
         }
 
         public List<DiaryDTO> GetDiaries()

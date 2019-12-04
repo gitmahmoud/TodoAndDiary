@@ -10,9 +10,11 @@ namespace ToDoAndDiary.Model
     {
         public int Id { get; set; }
 
-         [Display(Name = "Text")]
+        
+        [Display(Name = "Text"), Required, DataType(DataType.MultilineText)]
         public string Text { get; set; }
 
+        
         [Display(Name = "Created At")]
         public DateTime CreationDate { get; set; }
     }

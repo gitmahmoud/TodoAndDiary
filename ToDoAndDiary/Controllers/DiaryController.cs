@@ -23,5 +23,26 @@ namespace ToDoAndDiary.Controllers
             return View(lst_diaries);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Text")]DiaryVm diary)
+        {
+
+            if (ModelState.IsValid)
+            {
+                DiaryDTO diaryDto = Mapper.Map<DiaryVm, DiaryDTO>(diary);
+
+                serviceProvider._diaryService.AddDiary(diaryDto);
+                return RedirectToAction("Index");
+            }
+
+            return View(diary);
+        }
+
     }
 }

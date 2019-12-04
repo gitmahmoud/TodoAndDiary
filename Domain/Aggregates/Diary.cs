@@ -9,5 +9,6 @@ namespace Domain.Aggregates
 {
     public class Diary : Entity
     {
+
     }
 }

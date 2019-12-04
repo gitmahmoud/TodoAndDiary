@@ -8,7 +8,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Todos</h2>
+@Html.ActionLink("New", "Create", "Todo")
 
 <div class="code-cut">
     @Html.Grid(Model).Columns(columns =>
@@ -24,4 +25,3 @@
 
 }).WithPaging(3).Sortable(true)
 </div>
-  

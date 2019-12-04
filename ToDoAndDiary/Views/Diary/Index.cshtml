@@ -7,14 +7,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Diaries</h2>
+@Html.ActionLink("New", "Create", "Diary")
 
 <div class="code-cut">
     @Html.Grid(Model).Columns(columns =>
 {
     columns.Add(c => c.Text).Titled("Text").Filterable(true);
-    columns.Add(c => c.CreationDate).Titled("Created At").Filterable(true);    
+    columns.Add(c => c.CreationDate).Titled("Created At").Filterable(true);
     columns.Add()
     .Encoded(false)
     .Sanitized(false)

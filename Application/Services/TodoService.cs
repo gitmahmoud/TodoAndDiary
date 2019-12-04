@@ -21,7 +21,9 @@ namespace Application.Services
 
         public void AddTodo(TodoDTO todoDto)
         {
-            throw new NotImplementedException();
+            Todo todo = Mapper.Map<TodoDTO, Todo>(todoDto);
+            _todoRepository.Add(todo);
+            _todoRepository.UnitOfWork.Commit();
         }
 
         public TodoDTO GetTodo(int id)

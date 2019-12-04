@@ -22,6 +22,27 @@ namespace ToDoAndDiary.Controllers
 
             return View(lst_todos);
         }
-        
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Text,DueDate,DueTime")]TodoVm todo)
+        {
+
+            if (ModelState.IsValid)
+            {
+                TodoDTO todoDto = Mapper.Map<TodoVm, TodoDTO>(todo);
+
+                serviceProvider._todoService.AddTodo(todoDto);
+                return RedirectToAction("Index");
+            }
+
+            return View(todo);
+        }
+
     }
 }

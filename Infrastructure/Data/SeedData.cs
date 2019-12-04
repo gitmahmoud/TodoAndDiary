@@ -20,14 +20,14 @@ namespace Infrastructure.Data
                 if (ctx.Database.Exists())
                     return;
 
-                var diary1 = new Diary() {Text = "diary 01", CreationDate = DateTime.Now };
-                var diary2 = new Diary() {Text = "diary 02", CreationDate = DateTime.Now };
-                var diary3 = new Diary() {Text = "diary 03", CreationDate = DateTime.Now };
-                var diary4 = new Diary() {Text = "diary 04", CreationDate = DateTime.Now };
-                var diary5 = new Diary() {Text = "diary 05", CreationDate = DateTime.Now };
-                var diary6 = new Diary() {Text = "diary 06", CreationDate = DateTime.Now };
-                var diary7 = new Diary() {Text = "diary 07", CreationDate = DateTime.Now };
-                var diary8 = new Diary() {Text = "diary 08", CreationDate = DateTime.Now };
+                var diary1 = new Diary() {Text = "diary 01"};
+                var diary2 = new Diary() {Text = "diary 02"};
+                var diary3 = new Diary() {Text = "diary 03"};
+                var diary4 = new Diary() {Text = "diary 04"};
+                var diary5 = new Diary() {Text = "diary 05"};
+                var diary6 = new Diary() {Text = "diary 06"};
+                var diary7 = new Diary() {Text = "diary 07"};
+                var diary8 = new Diary() {Text = "diary 08"};
 
                 ctx.Diaries.Add(diary1);
                 ctx.Diaries.Add(diary2);
@@ -38,14 +38,14 @@ namespace Infrastructure.Data
                 ctx.Diaries.Add(diary7);
                 ctx.Diaries.Add(diary8);
 
-                var todo1 = new Todo() { Text = "todo 01", CreationDate = DateTime.Now,  DueDate = DateTime.Now };
-                var todo2 = new Todo() { Text = "todo 02", CreationDate = DateTime.Now , DueDate = DateTime.Now};
-                var todo3 = new Todo() { Text = "todo 03", CreationDate = DateTime.Now , DueDate = DateTime.Now};
-                var todo4 = new Todo() { Text = "todo 04", CreationDate = DateTime.Now , DueDate = DateTime.Now};
-                var todo5 = new Todo() { Text = "todo 05", CreationDate = DateTime.Now , DueDate = DateTime.Now};
-                var todo6 = new Todo() { Text = "todo 06", CreationDate = DateTime.Now , DueDate = DateTime.Now};
-                var todo7 = new Todo() { Text = "todo 07", CreationDate = DateTime.Now , DueDate = DateTime.Now};
-                var todo8 = new Todo() { Text = "todo 08", CreationDate = DateTime.Now , DueDate = DateTime.Now};
+                var todo1 = new Todo() { Text = "todo 01" ,  DueDate = DateTime.Now };
+                var todo2 = new Todo() { Text = "todo 02" , DueDate = DateTime.Now};
+                var todo3 = new Todo() { Text = "todo 03" , DueDate = DateTime.Now};
+                var todo4 = new Todo() { Text = "todo 04" , DueDate = DateTime.Now};
+                var todo5 = new Todo() { Text = "todo 05" , DueDate = DateTime.Now};
+                var todo6 = new Todo() { Text = "todo 06" , DueDate = DateTime.Now};
+                var todo7 = new Todo() { Text = "todo 07" , DueDate = DateTime.Now};
+                var todo8 = new Todo() { Text = "todo 08" , DueDate = DateTime.Now};
 
                 ctx.Todos.Add(todo1);
                 ctx.Todos.Add(todo2);
