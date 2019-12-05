@@ -50,10 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Interfaces\IQueryableUnitOfWork.cs" />
+    <Compile Include="Data\Repositories\AttachmentRepository.cs" />
     <Compile Include="Data\Repositories\DiaryRepository.cs" />
     <Compile Include="Data\Repositories\Repository.cs" />
     <Compile Include="Data\Repositories\TodoRepository.cs" />
-    <Compile Include="Data\SeedData.cs" />
     <Compile Include="Data\UnitOfWork\MainUnitOfWork.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

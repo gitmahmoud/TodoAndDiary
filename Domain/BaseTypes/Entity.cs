@@ -12,20 +12,19 @@ namespace Domain.BaseTypes
     {
         private DateTime _CreationDate;
 
+        public Entity()
+        {
+            this._CreationDate = DateTime.Now;
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity), Key()]
         public int Id { get; set; }
 
-        public DateTime CreationDate
-        {
-            get
-            { 
-                return this._CreationDate;
-            }
-            private set
-            {
-                this._CreationDate = DateTime.Now;
-            }
+        public DateTime CreationDate { 
+            get{ return this._CreationDate;}
+            protected set { }        
         }
+
         public DateTime? LastEditDate { get; set; }
         public DateTime? DeleteDate { get; set; }
         public bool? IsDeleted { get; set; }

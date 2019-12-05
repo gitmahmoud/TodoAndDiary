@@ -38,6 +38,7 @@ namespace ToDoAndDiary
 
             container.RegisterType<IDiaryRepository, DiaryRepository>();
             container.RegisterType<ITodoRepository, TodoRepository>();
+            container.RegisterType<IAttachmentRepository, AttachmentRepository>();
 
             Mapper.CreateMap<Diary, DiaryDTO>();
             Mapper.CreateMap<DiaryDTO, DiaryVm>();
@@ -49,9 +50,7 @@ namespace ToDoAndDiary
             Mapper.CreateMap<TodoDTO, TodoVm>();
 
             Mapper.CreateMap<TodoVm, TodoDTO>();
-            Mapper.CreateMap<TodoDTO, Todo>();
-
-            //DbDataInitializier.InitializeDatabase();
+            Mapper.CreateMap<TodoDTO, Todo>();            
         }
     }
 }

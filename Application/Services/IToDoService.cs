@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Application.Services
 {
@@ -27,7 +28,7 @@ namespace Application.Services
         /// Adds a todo information
         /// </summary>
         /// <param name="todoDto">Information to be added</param>
-        void AddTodo(TodoDTO todoDto);
+        void AddTodo(TodoDTO todoDto, HttpFileCollectionBase Files);
 
         /// <summary>
         /// Updates a todo information

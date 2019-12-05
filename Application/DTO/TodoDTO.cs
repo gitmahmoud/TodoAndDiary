@@ -11,6 +11,8 @@ namespace Application.DTO
         public int Id { get; set; }
         public string Text { get; set; }
         public DateTime DueDate { get; set; }
+        public bool Expired { get; set; }
+
         public DateTime CreationDate { get; set; }
 
     }

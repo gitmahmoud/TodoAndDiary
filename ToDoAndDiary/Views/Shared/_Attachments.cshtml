@@ -1,0 +1,19 @@
+﻿
+
+<div class="form-group" id="uploadDiv">
+    @Html.TextBox("file", "", new { type = "file", @onClick = "return AddUploadControl()" })
+</div>
+
+<script>
+
+    var count = 1;
+    function AddUploadControl() {
+
+        var input = document.createElement("input");
+        input.type = "file";
+        input.name = "file" + count;
+
+        document.getElementById("uploadDiv").appendChild(input);
+        count++;
+    }
+</script>

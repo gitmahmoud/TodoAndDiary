@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Application.DTO;
 using AutoMapper;
 using Domain.Aggregates;
@@ -10,26 +11,32 @@ using Domain.Aggregates;
 
 namespace Application.Services
 {
-    public class DiaryService : IDiaryService
+    public class DiaryService : BaseService, IDiaryService
     {
         private readonly IDiaryRepository _diaryRepository;
+        private readonly IAttachmentRepository _attachmentRepository;
 
-        public DiaryService(IDiaryRepository diaryRepository)
+        public DiaryService(IDiaryRepository diaryRepository, IAttachmentRepository attachmentRepository)
         {
             _diaryRepository = diaryRepository;
+            _attachmentRepository = attachmentRepository;
         }
 
 
-        public void AddDiary(DiaryDTO diaryDto)
+        public void AddDiary(DiaryDTO diaryDto, HttpFileCollectionBase Files)
         {
             Diary diary = Mapper.Map<DiaryDTO, Diary>(diaryDto);
             _diaryRepository.Add(diary);
+
+            List<string> fileNames = SaveFiles(Files);
+            AddAttachments(_attachmentRepository, diary, fileNames);
+
             _diaryRepository.UnitOfWork.Commit();
         }
 
         public List<DiaryDTO> GetDiaries()
         {
-            var diaries = _diaryRepository.GetAll();
+            var diaries = _diaryRepository.Get(x=> x.IsDeleted != true, x=> x.OrderByDescending(y=> y.CreationDate));
 
             return Mapper.Map<IEnumerable<Diary>, List<DiaryDTO>>(diaries);
         }

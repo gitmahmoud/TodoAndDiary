@@ -31,6 +31,7 @@ namespace Infrastructure.Data.UnitOfWork
 
         public DbSet<Todo> Todos { get; set; }
         public DbSet<Diary> Diaries { get; set; }
+        public DbSet<Attachment> Attachments { get; set; }
         
 
         public DbSet<TEntity> CreateSet<TEntity>() where TEntity : class

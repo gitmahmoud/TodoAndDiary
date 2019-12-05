@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Application.Services
 {
@@ -27,7 +28,7 @@ namespace Application.Services
         /// Adds a diary information
         /// </summary>
         /// <param name="diaryDto">Information to be added</param>
-        void AddDiary(DiaryDTO diaryDto);
+        void AddDiary(DiaryDTO diaryDto, HttpFileCollectionBase Files);
 
         /// <summary>
         /// Updates a diary information

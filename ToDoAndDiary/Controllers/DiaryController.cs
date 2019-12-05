@@ -37,7 +37,7 @@ namespace ToDoAndDiary.Controllers
             {
                 DiaryDTO diaryDto = Mapper.Map<DiaryVm, DiaryDTO>(diary);
 
-                serviceProvider._diaryService.AddDiary(diaryDto);
+                serviceProvider._diaryService.AddDiary(diaryDto, Request.Files);
                 return RedirectToAction("Index");
             }
 

@@ -17,6 +17,7 @@
     columns.Add(c => c.Text).Titled("Text").Filterable(true);
     columns.Add(c => c.CreationDate).Titled("Created At").Filterable(true);
     columns.Add(c => c.DueDate).Titled("Due At").Filterable(true);
+    columns.Add(c => c.Expired).Titled("Expired").Filterable(true);
     columns.Add()
     .Encoded(false)
     .Sanitized(false)
