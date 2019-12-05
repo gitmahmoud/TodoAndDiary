@@ -18,11 +18,11 @@
     columns.Add(c => c.CreationDate).Titled("Created At").Filterable(true);
     columns.Add(c => c.DueDate).Titled("Due At").Filterable(true);
     columns.Add(c => c.Expired).Titled("Expired").Filterable(true);
-    columns.Add()
-    .Encoded(false)
-    .Sanitized(false)
-    .SetWidth(30)
-    .RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.Id }));
+    //columns.Add()
+    //.Encoded(false)
+    //.Sanitized(false)
+    //.SetWidth(30)
+    //.RenderValueAs(o => Html.ActionLink("Edit", "Edit", new { id = o.Id }));
 
 }).WithPaging(3).Sortable(true)
 </div>

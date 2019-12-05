@@ -7,6 +7,7 @@ using Application.DTO;
 using AutoMapper;
 using Domain.Aggregates;
 using System.Web;
+using Domain.Interfaces;
 
 namespace Application.Services
 {
@@ -15,10 +16,12 @@ namespace Application.Services
         private readonly ITodoRepository _todoRepository;
         private readonly IAttachmentRepository _attachmentRepository;
 
-        public TodoService(ITodoRepository todoRepository, IAttachmentRepository attachmentRepository)
+        public TodoService(ITodoRepository todoRepository, IAttachmentRepository attachmentRepository, IFileSaver fileSaver)
         {
             _todoRepository = todoRepository;
             _attachmentRepository = attachmentRepository;
+            _fileSaver = fileSaver;
+
         }
 
         public void AddTodo(TodoDTO todoDto, HttpFileCollectionBase Files)

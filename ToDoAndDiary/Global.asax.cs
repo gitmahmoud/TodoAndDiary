@@ -17,6 +17,7 @@ using Infrastructure.Data;
 using AutoMapper;
 using Application.DTO;
 using ToDoAndDiary.Model;
+using Infrastructure.Files;
 
 namespace ToDoAndDiary
 {
@@ -31,14 +32,17 @@ namespace ToDoAndDiary
 
             var container = IoCContainer.Instance;
             container.RegisterType<IUnitOfWork, MainUnitOfWork>(new ContainerControlledLifetimeManager());
-                        container.RegisterType<IQueryableUnitOfWork, MainUnitOfWork>();
+            container.RegisterType<IQueryableUnitOfWork, MainUnitOfWork>();
+
+            container.RegisterType<IFileSaver, FileSaver>();
+            container.RegisterType<IDiaryRepository, DiaryRepository>();
+            container.RegisterType<ITodoRepository, TodoRepository>();
+            container.RegisterType<IAttachmentRepository, AttachmentRepository>();
 
             container.RegisterType<ITodoService, TodoService>();
             container.RegisterType<IDiaryService, DiaryService>();
 
-            container.RegisterType<IDiaryRepository, DiaryRepository>();
-            container.RegisterType<ITodoRepository, TodoRepository>();
-            container.RegisterType<IAttachmentRepository, AttachmentRepository>();
+            
 
             Mapper.CreateMap<Diary, DiaryDTO>();
             Mapper.CreateMap<DiaryDTO, DiaryVm>();

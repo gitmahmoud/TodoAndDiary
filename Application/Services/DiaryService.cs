@@ -7,7 +7,7 @@ using System.Web;
 using Application.DTO;
 using AutoMapper;
 using Domain.Aggregates;
-
+using Domain.Interfaces;
 
 namespace Application.Services
 {
@@ -16,10 +16,11 @@ namespace Application.Services
         private readonly IDiaryRepository _diaryRepository;
         private readonly IAttachmentRepository _attachmentRepository;
 
-        public DiaryService(IDiaryRepository diaryRepository, IAttachmentRepository attachmentRepository)
+        public DiaryService(IDiaryRepository diaryRepository, IAttachmentRepository attachmentRepository, IFileSaver fileSaver)
         {
             _diaryRepository = diaryRepository;
             _attachmentRepository = attachmentRepository;
+            _fileSaver = fileSaver;
         }
 
 

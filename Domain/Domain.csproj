@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,7 @@
     <Compile Include="Aggregates\IDiaryRepository.cs" />
     <Compile Include="Aggregates\ToDo.cs" />
     <Compile Include="BaseTypes\Entity.cs" />
+    <Compile Include="Interfaces\IFileSaver.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="ISpecification.cs" />

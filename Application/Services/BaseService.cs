@@ -1,4 +1,5 @@
 ﻿using Domain.Aggregates;
+using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace Application.Services
 {
     public abstract class BaseService
     {
+        protected IFileSaver _fileSaver;        
+
         protected void AddAttachments(IAttachmentRepository attachmentRepository, Todo todo, List<string> fileNames)
         {
             foreach (string fileName in fileNames)
@@ -28,17 +31,7 @@ namespace Application.Services
 
         protected List<string> SaveFiles(HttpFileCollectionBase Files)
         {
-            List<string> fileNames = new List<string>();
-            foreach (string upload in Files)
-            {
-                if (Files[upload] == null) continue;
-
-                string filename = Guid.NewGuid().ToString() + ".jpg";
-                string path = AppDomain.CurrentDomain.BaseDirectory + "uploads/";
-
-                Files[upload].SaveAs(System.IO.Path.Combine(path, filename));
-                fileNames.Add(filename);
-            }
+            List<string> fileNames = _fileSaver.SaveFile(Files);
 
             return fileNames;
         }
