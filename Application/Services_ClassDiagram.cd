@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Application.Services.DiaryServiceAgg.DiaryService">
+    <Position X="4" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAABAAAAAAgAAAAAAAAAAAAAAAkAAAEAAAAAA=</HashCode>
+      <FileName>Services\DiaryServiceAgg\DiaryService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_attachmentRepository" />
+      <Field Name="_diaryRepository" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Application.Services.TodoServiceAgg.TodoService">
+    <Position X="7.25" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAgAAAEAEAAAAAAAAAgAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Services\TodoServiceAgg\TodoService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_attachmentRepository" />
+      <Field Name="_todoRepository" />
+    </ShowAsAssociation>
+    <Lollipop Position="1.3" />
+  </Class>
+  <Class Name="Application.Services.BaseService">
+    <Position X="5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAACAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Services\BaseService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_fileSaver" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="Application.Services.DiaryServiceAgg.IDiaryService">
+    <Position X="2.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAA=</HashCode>
+      <FileName>Services\DiaryServiceAgg\IDiaryService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Application.Services.TodoServiceAgg.ITodoService">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAEAEAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\TodoServiceAgg\ITodoService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Domain.Interfaces.IFileSaver">
+    <Position X="9" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Domain.Aggregates.AttachmentsAgg.IAttachmentRepository">
+    <Position X="5.25" Y="5.75" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Domain.Aggregates.TodoAgg.ITodoRepository" Collapsed="true">
+    <Position X="11.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Domain.Aggregates.DiaryAgg.IDiaryRepository" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

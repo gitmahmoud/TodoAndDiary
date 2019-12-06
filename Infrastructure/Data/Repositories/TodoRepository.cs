@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Aggregates;
+using Domain.Aggregates.TodoAgg;
 using Infrastructure.Data.Interfaces;
 
 namespace Infrastructure.Data.Repositories

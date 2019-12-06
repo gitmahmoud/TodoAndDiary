@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Aggregates
+namespace Domain.Aggregates.AttachmentsAgg
 {    
     public interface IAttachmentRepository : IRepository<Attachment>
     {

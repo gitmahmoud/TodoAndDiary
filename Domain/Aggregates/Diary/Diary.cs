@@ -1,11 +1,12 @@
-﻿using Domain.BaseTypes;
+﻿using Domain.Aggregates.AttachmentsAgg;
+using Domain.BaseTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Aggregates
+namespace Domain.Aggregates.DiaryAgg
 {
     public class Diary : Entity
     {

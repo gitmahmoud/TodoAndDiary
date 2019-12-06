@@ -1,4 +1,6 @@
-﻿using Domain.Aggregates;
+﻿using Domain.Aggregates.TodoAgg;
+using Domain.Aggregates.AttachmentsAgg;
+using Domain.Aggregates.DiaryAgg;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;

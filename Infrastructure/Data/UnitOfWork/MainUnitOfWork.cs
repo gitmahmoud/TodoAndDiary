@@ -1,5 +1,7 @@
 ﻿using Infrastructure.Data.Interfaces;
-using Domain.Aggregates;
+using Domain.Aggregates.TodoAgg;
+using Domain.Aggregates.DiaryAgg;
+using Domain.Aggregates.AttachmentsAgg;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

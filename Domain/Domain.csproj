@@ -42,20 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aggregates\Attachment.cs" />
-    <Compile Include="Aggregates\Diary.cs" />
-    <Compile Include="Aggregates\IAttachmentRepository.cs" />
-    <Compile Include="Aggregates\ITodoRepository.cs" />
-    <Compile Include="Aggregates\IDiaryRepository.cs" />
-    <Compile Include="Aggregates\ToDo.cs" />
+    <Compile Include="Aggregates\Attachments\Attachment.cs" />
+    <Compile Include="Aggregates\Diary\Diary.cs" />
+    <Compile Include="Aggregates\Attachments\IAttachmentRepository.cs" />
+    <Compile Include="Aggregates\Todo\ITodoRepository.cs" />
+    <Compile Include="Aggregates\Diary\IDiaryRepository.cs" />
+    <Compile Include="Aggregates\Todo\ToDo.cs" />
     <Compile Include="BaseTypes\Entity.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\IFileSaver.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="ISpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="DomainClasses_ClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

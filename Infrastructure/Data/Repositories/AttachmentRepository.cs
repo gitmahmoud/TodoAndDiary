@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Aggregates;
+using Domain.Aggregates.AttachmentsAgg;
 
 namespace Infrastructure.Data.Repositories
 {

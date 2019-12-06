@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Services.DiaryServiceAgg;
+using Application.Services.TodoServiceAgg;
 
 namespace Application.Services
 {

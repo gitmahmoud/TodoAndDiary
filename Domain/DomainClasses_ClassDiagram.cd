@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Domain.Aggregates.TodoAgg.Todo">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACEAAAAAAAAAAAAAAAABAAAACAAAAAA=</HashCode>
+      <FileName>Aggregates\Todo\ToDo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Attachments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Aggregates.AttachmentsAgg.Attachment">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAIQAAAAAAAAAAABAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Aggregates\Attachments\Attachment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Aggregates.DiaryAgg.Diary">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Aggregates\Diary\Diary.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Attachments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.BaseTypes.Entity">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_CreationDate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAAAAAAAAAAABAAAAAAQAAQAAAAAAQAAAAA=</HashCode>
+      <FileName>BaseTypes\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

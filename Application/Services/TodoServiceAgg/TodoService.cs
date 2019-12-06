@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.DTO;
 using AutoMapper;
-using Domain.Aggregates;
+using Domain.Aggregates.TodoAgg;
+using Domain.Aggregates.AttachmentsAgg;
 using System.Web;
 using Domain.Interfaces;
 
-namespace Application.Services
+namespace Application.Services.TodoServiceAgg
 {
     public class TodoService : BaseService, ITodoService
     {

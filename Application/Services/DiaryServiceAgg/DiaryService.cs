@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Web;
 using Application.DTO;
 using AutoMapper;
-using Domain.Aggregates;
+using Domain.Aggregates.DiaryAgg;
+using Domain.Aggregates.AttachmentsAgg;
 using Domain.Interfaces;
 
-namespace Application.Services
+namespace Application.Services.DiaryServiceAgg
 {
     public class DiaryService : BaseService, IDiaryService
     {

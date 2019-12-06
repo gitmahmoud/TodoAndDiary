@@ -1,6 +1,7 @@
 namespace Infrastructure.Migrations
 {
-    using Domain.Aggregates;
+    using Domain.Aggregates.DiaryAgg;
+    using Domain.Aggregates.TodoAgg;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;

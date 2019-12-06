@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Application.Services
+namespace Application.Services.TodoServiceAgg
 {
     public interface ITodoService
     {
