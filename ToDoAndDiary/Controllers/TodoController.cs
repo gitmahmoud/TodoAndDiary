@@ -35,11 +35,20 @@ namespace ToDoAndDiary.Controllers
         {
             if (ModelState.IsValid)
             {
-                TodoDTO todoDto = Mapper.Map<TodoVm, TodoDTO>(todo);
+                try
+                {
 
-                serviceProvider._todoService.AddTodo(todoDto, Request.Files);
-                
-                return RedirectToAction("Index");
+                    TodoDTO todoDto = Mapper.Map<TodoVm, TodoDTO>(todo);
+
+                    serviceProvider._todoService.AddTodo(todoDto, Request.Files);
+
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    ViewBag.ErrorMsg = "Error occured";
+                    return View(todo);
+                }
             }
 
             return View(todo);

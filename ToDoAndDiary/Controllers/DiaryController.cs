@@ -35,10 +35,18 @@ namespace ToDoAndDiary.Controllers
 
             if (ModelState.IsValid)
             {
-                DiaryDTO diaryDto = Mapper.Map<DiaryVm, DiaryDTO>(diary);
+                try
+                {
+                    DiaryDTO diaryDto = Mapper.Map<DiaryVm, DiaryDTO>(diary);
 
-                serviceProvider._diaryService.AddDiary(diaryDto, Request.Files);
-                return RedirectToAction("Index");
+                    serviceProvider._diaryService.AddDiary(diaryDto, Request.Files);
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    ViewBag.ErrorMsg = "Error occured";
+                    return View(diary);
+                }
             }
 
             return View(diary);
